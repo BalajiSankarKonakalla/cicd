@@ -19,7 +19,7 @@ apply plugin: 'org.springframework.boot'
 
 jar {
     baseName = 'learning-ci-cd'
-    version =  '0.1.0'
+    version =  '0.1.3'
 }
 
 sourceCompatibility = 1.5
