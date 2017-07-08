@@ -1,0 +1,1 @@
+java -jar learning-ci-cd-0.1.0.jar
