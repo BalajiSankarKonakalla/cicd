@@ -9,5 +9,5 @@ before_install:
 
 script:
   - ./gradlew build
-  - aws s3 cp learning-ci-cd.jar s3://ci-cd-test-bucket/learning-ci-cd-${TRAVIS_BUILD_NUMBER}.jar
+  - aws s3 cp build/libs/learning-ci-cd-1.0.jar s3://ci-cd-test-bucket/learning-ci-cd-${TRAVIS_BUILD_NUMBER}.jar
 
