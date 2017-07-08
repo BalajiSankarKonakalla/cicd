@@ -10,4 +10,5 @@ before_install:
 script:
   - ./gradlew build
   - aws s3 cp build/libs/learning-ci-cd-1.0.jar s3://ci-cd-test-bucket/learning-ci-cd-${TRAVIS_BUILD_NUMBER}.jar
-
+  - aws elasticbeanstalk create-application-version --application-name learning-ci-cd --version-label ${TRAVIS_BUILD_NUMBER} --description learning-ci-cd --source-bundle S3Bucket="ci-cd-test-bucket",S3Key="learning-ci-cd-${TRAVIS_BUILD_NUMBER}.jar"
+  - aws elasticbeanstalk update-environment --environment-name Sample-env-1 --version-label ${TRAVIS_BUILD_NUMBER}
